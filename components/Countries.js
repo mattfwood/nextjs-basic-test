@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
 const ALL_TEAMS = gql`
-  query {
+  query ALL_TEAMS {
     teams {
       id
       name
@@ -17,6 +17,11 @@ const Countries = () => (
     {({ data, loading, error }) => {
       console.log({ data, loading, error });
       if (loading) return <div>Loading...</div>
+      if (error) {
+        console.error;
+        throw new Error(error);
+      }
+
       return (
         <div>{JSON.stringify(data)}</div>
       )
