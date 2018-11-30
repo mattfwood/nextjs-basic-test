@@ -3,7 +3,7 @@ import { Query } from 'react-apollo';
 import gql from 'graphql-tag';
 
 const ALL_TEAMS = gql`
-  query {
+  query ALL_TEAMS {
     teams {
       id
       name
