@@ -17,6 +17,11 @@ const Countries = () => (
     {({ data, loading, error }) => {
       console.log({ data, loading, error });
       if (loading) return <div>Loading...</div>
+      if (error) {
+        console.error;
+        throw new Error(error);
+      }
+
       return (
         <div>{JSON.stringify(data)}</div>
       )
